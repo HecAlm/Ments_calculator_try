@@ -12,7 +12,14 @@ import android.widget.Spinner;
 import com.example.ments_calculator_try.R;
 
 public class patientfactors_activity extends AppCompatActivity {
-
+Integer agedigit=0;
+Integer lungdigit=0;
+Integer sleepdigit=0;
+Integer cvdigit=0;
+Integer diabetesdigit=0;
+Integer inmunodigit=0;
+Integer ilidigit=0;
+Integer coviddigit=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,12 +57,23 @@ public class patientfactors_activity extends AppCompatActivity {
         agespinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                String selection=agespinner.getSelectedItem().toString();
+                if (selection.equals("<20 years")){
+                    agedigit=1;
+                } else if (selection.equals("21-40 years")){
+                    agedigit=2;
+                } else if (selection.equals("41-50 years")){
+                    agedigit=3;
+                } else if (selection.equals("51-65 years")){
+                    agedigit=4;
+                } else if (selection.equals(">65 years")){
+                    agedigit=5;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                agedigit=0;
             }
         });
 
@@ -68,12 +86,23 @@ public class patientfactors_activity extends AppCompatActivity {
         lungspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                String selection=lungspinner.getSelectedItem().toString();
+                if (selection.equals("None")){
+                    lungdigit=1;
+                } else if (selection.equals("-")){
+                    lungdigit=2;
+                } else if (selection.equals("-")){
+                    lungdigit=3;
+                } else if (selection.equals("Minimal (rare inhaler)")){
+                    lungdigit=4;
+                } else if (selection.equals(">Minimal")){
+                    lungdigit=5;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                lungdigit=0;
             }
         });
 
@@ -87,12 +116,23 @@ public class patientfactors_activity extends AppCompatActivity {
         sleepspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                String selection=sleepspinner.getSelectedItem().toString();
+                if (selection.equals("Not present")){
+                    sleepdigit=1;
+                } else if (selection.equals("-")){
+                    sleepdigit=2;
+                } else if (selection.equals("-")){
+                    sleepdigit=3;
+                } else if (selection.equals("Mild/moderate (no CPAP)")){
+                    sleepdigit=4;
+                } else if (selection.equals("On CPAP")){
+                    sleepdigit=5;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                sleepdigit=0;
             }
         });
 
@@ -105,12 +145,23 @@ public class patientfactors_activity extends AppCompatActivity {
         cvspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                String selection=cvspinner.getSelectedItem().toString();
+                if (selection.equals("None")){
+                    cvdigit=1;
+                } else if (selection.equals("Minimal(no meds)")){
+                    cvdigit=2;
+                } else if (selection.equals("Mild (1 med)")){
+                    cvdigit=3;
+                } else if (selection.equals("Moderate (2 meds)")){
+                    cvdigit=4;
+                } else if (selection.equals("Severe (>3 meds)")){
+                    cvdigit=5;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                cvdigit=0;
             }
         });
 
@@ -123,12 +174,23 @@ public class patientfactors_activity extends AppCompatActivity {
         diabetesspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                String selection=diabetesspinner.getSelectedItem().toString();
+                if (selection.equals("None")){
+                    diabetesdigit=1;
+                } else if (selection.equals("-")){
+                    diabetesdigit=2;
+                } else if (selection.equals("Mild (no meds)")){
+                    diabetesdigit=3;
+                } else if (selection.equals("Moderate (PO meds only)")){
+                    diabetesdigit=4;
+                } else if (selection.equals(">Moderate (insulin)")){
+                    diabetesdigit=5;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                diabetesdigit=0;
             }
         });
 
@@ -141,12 +203,23 @@ public class patientfactors_activity extends AppCompatActivity {
         inmunospinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                String selection=inmunospinner.getSelectedItem().toString();
+                if (selection.equals("N0")){
+                    inmunodigit=1;
+                } else if (selection.equals("-")){
+                    inmunodigit=2;
+                } else if (selection.equals("-")){
+                    inmunodigit=3;
+                } else if (selection.equals("Moderate")){
+                    inmunodigit=4;
+                } else if (selection.equals("Severe")){
+                    inmunodigit=5;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                inmunodigit=0;
             }
         });
 
@@ -159,12 +232,23 @@ public class patientfactors_activity extends AppCompatActivity {
         ilispinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                String selection=ilispinner.getSelectedItem().toString();
+                if (selection.equals("None (Asymptomatic")){
+                    ilidigit=1;
+                } else if (selection.equals("-")){
+                    ilidigit=2;
+                } else if (selection.equals("-")){
+                    ilidigit=3;
+                } else if (selection.equals("-")){
+                    ilidigit=4;
+                } else if (selection.equals("Yes")){
+                    ilidigit=5;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                ilidigit=0;
             }
         });
 
@@ -177,12 +261,23 @@ public class patientfactors_activity extends AppCompatActivity {
         covidspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                String selection=covidspinner.getSelectedItem().toString();
+                if (selection.equals("No")){
+                    coviddigit=1;
+                } else if (selection.equals("Probably not")){
+                    coviddigit=2;
+                } else if (selection.equals("Possibly")){
+                    coviddigit=3;
+                } else if (selection.equals("Probably")){
+                    coviddigit=4;
+                } else if (selection.equals("Yes")){
+                    coviddigit=5;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                coviddigit=0;
             }
         });
 
