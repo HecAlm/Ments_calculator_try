@@ -12,7 +12,12 @@ import android.widget.Spinner;
 import com.example.ments_calculator_try.R;
 
 public class diseasefactors_activity extends AppCompatActivity {
-
+Integer wk6riskdigit=0;
+Integer wk6outcomedigit=0;
+Integer wk2riskdigit=0;
+Integer wk2outcomedigit=0;
+Integer riskdigit=0;
+Integer effectivenessdigit=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,12 +59,23 @@ public class diseasefactors_activity extends AppCompatActivity {
         efectivenessspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                String selection=efectivenessspinner.getSelectedItem().toString();
+                if (selection.equals("None available")){
+                    effectivenessdigit=1;
+                } else if (selection.equals("Available,<40% as effective as surgery")){
+                    effectivenessdigit=2;
+                } else if (selection.equals("Available,40% to 60% as effective as surgery")){
+                    effectivenessdigit=3;
+                } else if (selection.equals("Available, 61% to 95% as effective as surgery")){
+                    effectivenessdigit=4;
+                } else if (selection.equals("Available,equally effective")){
+                    effectivenessdigit=5;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                effectivenessdigit=0;
             }
         });
 
@@ -71,12 +87,23 @@ public class diseasefactors_activity extends AppCompatActivity {
         risksspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                String selection=risksspinner.getSelectedItem().toString();
+                if (selection.equals("Significantly worse/ not applicable")){
+                    riskdigit=1;
+                } else if (selection.equals("Somewhat worse")){
+                    riskdigit=2;
+                } else if (selection.equals("Equivalent")){
+                    riskdigit=3;
+                } else if (selection.equals("Somewhat better")){
+                    riskdigit=4;
+                } else if (selection.equals("Significantly better")){
+                    riskdigit=5;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                riskdigit=0;
             }
         });
 
@@ -89,12 +116,23 @@ public class diseasefactors_activity extends AppCompatActivity {
         wk2_outcomespinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                String selection=wk2_outcomespinner.getSelectedItem().toString();
+                if (selection.equals("Significantly worse")){
+                    wk2outcomedigit=1;
+                } else if (selection.equals("Worse")){
+                    wk2outcomedigit=2;
+                } else if (selection.equals("Moderately worse")){
+                    wk2outcomedigit=3;
+                } else if (selection.equals("Slightly worse")){
+                    wk2outcomedigit=4;
+                } else if (selection.equals("No worse")){
+                    wk2outcomedigit=5;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                wk2outcomedigit=0;
             }
         });
 
@@ -108,12 +146,23 @@ public class diseasefactors_activity extends AppCompatActivity {
         wk2_riskspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                String selection=wk2_riskspinner.getSelectedItem().toString();
+                if (selection.equals("Significantly worse")){
+                    wk2riskdigit=1;
+                } else if (selection.equals("Worse")){
+                    wk2riskdigit=2;
+                } else if (selection.equals("Moderately worse")){
+                    wk2riskdigit=3;
+                } else if (selection.equals("Slightly worse")){
+                    wk2riskdigit=4;
+                } else if (selection.equals("No worse")){
+                    wk2riskdigit=5;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                wk2riskdigit=0;
             }
         });
 
@@ -127,12 +176,23 @@ public class diseasefactors_activity extends AppCompatActivity {
         wk6_outcomespinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                String selection=wk6_outcomespinner.getSelectedItem().toString();
+                if (selection.equals("Significantly worse")){
+                    wk6outcomedigit=1;
+                } else if (selection.equals("Worse")){
+                    wk6outcomedigit=2;
+                } else if (selection.equals("Moderately worse")){
+                    wk6outcomedigit=3;
+                } else if (selection.equals("Slightly worse")){
+                    wk6outcomedigit=4;
+                } else if (selection.equals("No worse")){
+                    wk6outcomedigit=5;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                wk6outcomedigit=0;
             }
         });
 
@@ -146,12 +206,23 @@ public class diseasefactors_activity extends AppCompatActivity {
         wk6_riskspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                String selection=wk6_riskspinner.getSelectedItem().toString();
+                if (selection.equals("Significantly worse")){
+                    wk6riskdigit=1;
+                } else if (selection.equals("Worse")){
+                    wk6riskdigit=2;
+                } else if (selection.equals("Moderately worse")){
+                    wk6riskdigit=3;
+                } else if (selection.equals("Slightly worse")){
+                    wk6riskdigit=4;
+                } else if (selection.equals("No worse")){
+                    wk6riskdigit=5;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                wk6riskdigit=0;
             }
         });
     }
