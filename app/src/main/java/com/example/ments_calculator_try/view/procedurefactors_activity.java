@@ -10,9 +10,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import com.example.ments_calculator_try.R;
-
 public class procedurefactors_activity extends AppCompatActivity {
-
+Integer losdigit=0;
+Integer ordigit=0;
+Integer icudigit=0;
+Integer blooddigit=0;
+Integer teamdigit=0;
+Integer intubationdigit=0;
+Integer sitedigit=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,12 +50,23 @@ public class procedurefactors_activity extends AppCompatActivity {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int i, long l) {
-
+                String selection = orspiner.getSelectedItem().toString();
+                if (selection.equals("<30 min")){
+                    ordigit=1;
+                } else if (selection.equals("31-60 min")){
+                    ordigit=2;
+                } else if (selection.equals("61-120 min")){
+                    ordigit=3;
+                } else if (selection.equals("121-180 min")){
+                    ordigit=4;
+                } else if (selection.equals(">181 min")){
+                    ordigit=5;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                ordigit=0;
             }
 
         });
@@ -65,12 +81,24 @@ public class procedurefactors_activity extends AppCompatActivity {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int i, long l) {
+                String selection=losspiner.getSelectedItem().toString();
+                if (selection.equals("Outpatient")){
+                    losdigit=1;
+                } else if (selection.equals("<23 hours")){
+                    losdigit=2;
+                } else if (selection.equals("24-48 hours")){
+                    losdigit=3;
+                } else if (selection.equals("2-3 days")){
+                    losdigit=4;
+                } else if (selection.equals(">4 days")){
+                    losdigit=5;
+                }
 
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                losdigit=0;
             }
 
         });
@@ -86,13 +114,24 @@ public class procedurefactors_activity extends AppCompatActivity {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int i, long l) {
-
+                String selection=icuspiner.getSelectedItem().toString();
+                if (selection.equals("Very Unlikely")){
+                    icudigit=1;
+                } else if (selection.equals("<5%")){
+                    icudigit=2;
+                } else if (selection.equals("5-10%")){
+                    icudigit=3;
+                } else if (selection.equals("11-25%")){
+                    icudigit=4;
+                } else if (selection.equals(">25%")){
+                    icudigit=5;
+                }
             }
 
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                icudigit=0;
             }
 
         });
@@ -108,12 +147,23 @@ public class procedurefactors_activity extends AppCompatActivity {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int i, long l) {
-
+                String selection=bloodspiner.getSelectedItem().toString();
+                if (selection.equals("<100 cc")){
+                    blooddigit=1;
+                } else if (selection.equals("100-250 cc")){
+                    blooddigit=2;
+                } else if (selection.equals("250-500 cc")){
+                    blooddigit=3;
+                } else if (selection.equals("500-750 cc")){
+                    blooddigit=4;
+                } else if (selection.equals(">751 cc")){
+                    blooddigit=5;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                blooddigit=0;
             }
 
         });
@@ -131,12 +181,23 @@ public class procedurefactors_activity extends AppCompatActivity {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int i, long l) {
-
+                String selection=teamspiner.getSelectedItem().toString();
+                if (selection.equals("1")){
+                    teamdigit=1;
+                } else if (selection.equals("2")){
+                    teamdigit=2;
+                } else if (selection.equals("3")){
+                    teamdigit=3;
+                } else if (selection.equals("4")){
+                    teamdigit=4;
+                } else if (selection.equals("5")){
+                    teamdigit=5;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                teamdigit=0;
             }
 
         });
@@ -152,12 +213,24 @@ public class procedurefactors_activity extends AppCompatActivity {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int i, long l) {
+                String selection=intubationspiner.getSelectedItem().toString();
+                if (selection.equals("<1%")){
+                    intubationdigit=1;
+                } else if (selection.equals("1-5%")){
+                    intubationdigit=2;
+                } else if (selection.equals("6-10%")){
+                    intubationdigit=3;
+                } else if (selection.equals("11-25%")){
+                    intubationdigit=4;
+                } else if (selection.equals(">25%")){
+                    intubationdigit=5;
+                }
 
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                intubationdigit=0;
             }
 
         });
@@ -174,12 +247,23 @@ public class procedurefactors_activity extends AppCompatActivity {
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int i, long l) {
-
+                String selection=sitespiner.getSelectedItem().toString();
+                if (selection.equals("None of the following variables")){
+                    sitedigit=1;
+                } else if (selection.equals("Abdominopelvic MIS")){
+                    sitedigit=2;
+                } else if (selection.equals("Abdominopelvic open surgery, infaumbilical")){
+                    sitedigit=3;
+                } else if (selection.equals("Abdominopelvic open surgery, supraumbilical")){
+                    sitedigit=4;
+                } else if (selection.equals("OHNS/upper or GI/thoracic")){
+                    sitedigit=5;
+                }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
+                sitedigit=0;
             }
 
         });
